@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9f7ef;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 16px #b2bec3;
+            text-align: center;
+        }
+        h1 {
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+        .welcome {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 30px;
+        }
+        .dashboard {
+            padding: 10px 24px;
+            background: #00b894;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background: #0984e3;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="welcome">
+            Hello, {{ request.user.username }}! You have logged in successfully.
+        </div>
+        <a href="{% url 'login' %}" class="dashboard">HERE IS YOUR DASHBOARD</a>
+    </div>
+</body>
+</html>

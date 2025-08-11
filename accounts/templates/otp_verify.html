@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+    <style>
+        /* Same CSS for consistency */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>OTP Verification</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="message {% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% endif %}">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" name="otp" maxlength="6" required>
+        </div>
+        <button type="submit">Verify OTP</button>
+    </form>
+</div>
+
+</body>
+</html>

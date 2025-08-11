@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        /* Your existing CSS */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Signup Form</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="message {% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% endif %}">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-field">
+            {{ form.username.errors }}
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+        </div>
+        <div class="form-field">
+            {{ form.email.errors }}
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+        <div class="form-field">
+            {{ form.password.errors }}
+            <label for="{{ form.password.id_for_label }}">Password:</label>
+            {{ form.password }}
+        </div>
+        <div class="form-field">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" required>
+        </div>
+
+        <button type="submit">Send OTP</button>
+    </form>
+</div>
+
+</body>
+</html>

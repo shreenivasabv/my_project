@@ -19,18 +19,15 @@
             margin-bottom: 2px;
             color: white;
         }
-        .event-image {
-            width: 250px; /* Make image smaller */
-            max-width: 90vw;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(33, 150, 243, 0.15);
-            margin-bottom: 30px;
-            display: block;
-        }
+    
     </style>
 </head>
 <body>
     <h1>WELCOME TO THE EVENT BOOKING SYSTEM</h1>
     <img src="{% static 'home1.jpg' %}" alt="Event" class="event-image">
+    <div class="buttons" style="text-align: center; margin-top: 15px;">
+    <a href="{% url 'signup' %}" class="signup-btn" style="display:inline-block; padding:10px 24px; background:#2196F3; color:#fff; border-radius:6px; text-decoration:none; margin-right: 10px;">Sign Up</a>
+    <a href="{% url 'login' %}" class="signup-btn" style="display:inline-block; padding:10px 24px; background:#43a047; color:#fff; border-radius:6px; text-decoration:none;">Login</a>
+</div>
 </body>
 </html>

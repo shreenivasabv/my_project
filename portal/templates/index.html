@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portal</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: rgb(23, 123, 160);
+            margin: 0;
+            position: relative;
+        }
+        .product-container {
+            margin-top: 15px;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+        .single-product{
+            display: flex;
+            flex-direction:column;
+            margin-top:0px;
+        }
+        .info-row {
+            display: flex;
+            gap: 16px;
+        }
+        .shirt {
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .price {
+            font-size: 16px;
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+        .rating {
+            color: #333;
+            font-size: 16px;
+            background: #f1c40f;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-weight: bold;
+            gap: 10px;
+        }
+        .add-to-cart {
+            padding: 8px 18px;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background: #1565c0;
+        }
+        .image{
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            background: #f9f9f9; 
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .name{
+            text-align: left;
+            color: black;
+            font-size: 25px;
+            margin-top: 10px; 
+            margin-bottom: 5px; 
+        }
+        .email{
+            text-align: left;
+            color:black;
+            font-size:15px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            Welcome to the E-Commerce Portal
+            {% if request.user.is_authenticated %}
+            <p class="name">
+                {{request.user.username}}
+            </p>
+            <p class="email">
+                {{request.user.email}}
+            </p>
+
+            {% endif %}
+        </h1>
+    </div>
+<div class="product-container">
+<div class="single-product">
+    <img   class="image" src="{% static 'shirt.png' %}" alt="shirt">
+    <div class="info-row">
+        <span class="rating">4.2 ★</span>
+        <span class="shirt">Shirt</span>
+        <span class="price">Price: 350</span>
+    </div>
+    <div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'pant.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.2 ★</span>
+            <span class="shirt">Pant</span>
+            <span class="price">Price:350</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'tshirt.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.2 ★</span>
+            <span class="shirt">T-Shirt</span>
+            <span class="price">Price:350</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'mouse.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.7 ★</span>
+            <span class="shirt">Mouse</span>
+            <span class="price">Price:600</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>  
+
+        <div class="single-product">
+        <img class="image" src="{%static 'vivo.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.9 ★</span>
+            <span class="shirt">Vivo Phone</span>
+            <span class="price">Price:15000</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>     
+</div>
+<div class="product-container">
+<div class="single-product">
+    <img   class="image" src="{% static 'slipper.png' %}" alt="shirt">
+    <div class="info-row">
+        <span class="rating">4.2 ★</span>
+        <span class="shirt">Slipper</span>
+        <span class="price">Price: 100</span>
+    </div>
+    <div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'tracksuit.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.2 ★</span>
+            <span class="shirt">Track-Suit</span>
+            <span class="price">Price:500</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'lower.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.0 ★</span>
+            <span class="shirt">Lowers</span>
+            <span class="price">Price:300</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'salwar.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.8     ★</span>
+            <span class="shirt">Salwar</span>
+            <span class="price">Price:1000</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>  
+
+        <div class="single-product">
+        <img class="image" src="{%static 'bed.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.9 ★</span>
+            <span class="shirt">Bed</span>
+            <span class="price">Price:10</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>     
+</div>
+
+<div class="product-container">
+<div class="single-product">
+    <img   class="image" src="{% static 'watch.png' %}" alt="shirt">
+    <div class="info-row">
+        <span class="rating">4.5     ★</span>
+        <span class="shirt">Watch</span>
+        <span class="price">Price: 1000</span>
+    </div>
+    <div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'pencils.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.5 ★</span>
+            <span class="shirt">Pencils</span>
+            <span class="price">Price:100</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'books.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.2 ★</span>
+            <span class="shirt">Books</span>
+            <span class="price">Price:80</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>
+
+    <div class="single-product">
+        <img class="image" src="{%static 'photos.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.9 ★</span>
+            <span class="shirt">Photo Frames</span>
+            <span class="price">Price:356</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>  
+
+        <div class="single-product">
+        <img class="image" src="{%static 'fevicol.png' %}" alt="pant">
+        <div class="info-row">
+            <span class="rating">4.6 ★</span>
+            <span class="shirt">fevicol</span>
+            <span class="price">Price:5</span>
+        </div>
+        <div>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </div>     
+</div>
+</body>
+</html>

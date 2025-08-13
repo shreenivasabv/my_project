@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>E-Commerce</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: blue;
+        }
+        h1 {
+            margin-bottom: 2px;
+            color: white;
+        }
+        .event-image {
+            width: 250px; /* Make image smaller */
+            max-width: 90vw;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(33, 150, 243, 0.15);
+            margin-bottom: 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO THE EVENT BOOKING SYSTEM</h1>
+    <img src="{% static 'home1.jpg' %}" alt="Event" class="event-image">
+</body>
+</html>

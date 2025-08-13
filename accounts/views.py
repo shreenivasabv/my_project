@@ -108,3 +108,7 @@ def logout_view(request):
 
 def dashboard(request):
     return render(request, "dashboard.html")
+
+
+def home(request):
+    return render(request, "home.html")

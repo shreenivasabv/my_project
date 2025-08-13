@@ -7,3 +7,4 @@ def send_otp_email(email, otp):
     email_from = settings.DEFAULT_FROM_EMAIL
     recipient_list = [email]
     send_mail(subject, message, email_from, recipient_list)
+    

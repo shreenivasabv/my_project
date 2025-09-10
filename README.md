@@ -14,7 +14,7 @@ A Django-based web application for user registration, OTP verification, login, a
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/shreenivasabv/my_project.git>
    cd <your-project-folder>
    ```
 
